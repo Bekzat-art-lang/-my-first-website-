@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Машиналар</title>
+<style>
+body {
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+  color:#000;
+}
+.container {
+  background-color:rgba(255,255,255,0.85);
+  margin:40px auto;
+  width:90%;
+  max-width:1000px;
+  border-radius:15px;
+  padding:20px;
+}
+h1 {
+  text-align:center;
+}
+.cars {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+.car {
+  width:280px;
+  background-color:white;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+  overflow:hidden;
+  text-align:center;
+}
+.car img {
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+.car h2 {
+  margin:10px 0 5px;
+}
+.car p {
+  margin:0 10px 10px;
+}
+button {
+  background-color:#007bff;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-bottom:15px;
+}
+.modal-bg {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  align-items:center;
+  justify-content:center;
+}
+.modal {
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  width:300px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Маған ұнайтын машиналар</h1>
+<div class="cars">
+
+<div class="car">
+<img src="https://avatars.mds.yandex.net/get-autoru-vos/5348457/6915aef8791990062d71538622bbb771/1200x900">
+<h2>Toyota Camry</h2>
+<p>2023 жыл. Сенімді седан, жайлы және үнемді.</p>
+<button onclick="showInfo('Toyota Camry – сенімді, отбасылық автомобиль.')">Ақпарат</button>
+</div>
+
+<div class="car">
+<img src="https://avatars.mds.yandex.net/get-autoru-vos/2168684/7848354056437a1b79a39e3e066df279/1200x900">
+<h2>BMW M4</h2>
+<p>2024 жыл. Қуатты спорткар, стиль мен жылдамдықтың үйлесімі.</p>
+<button onclick="showInfo('BMW M4 – жоғары өнімді спорткар, 510 а.к.')">Ақпарат</button>
+</div>
+
+<div class="car">
+<img src="https://avatars.mds.yandex.net/get-autoru-vos/4697556/ea796b5962bb92146ca74a9b4945e8b6/1200x900">
+<h2>Mercedes-Benz S-Class</h2>
+<p>2022 жыл. Люкс деңгейдегі жайлылық пен технология.</p>
+<button onclick="showInfo('Mercedes S-Class – ең жайлы бизнес-класс көлік.')">Ақпарат</button>
+</div>
+
+<div class="car">
+<img src="https://avatars.mds.yandex.net/get-autoru-vos/2132103/7c6b61793dfe0884abf368c540caef22/584x438">
+<h2>Tesla Model S</h2>
+<p>2024 жыл. Электромобиль, жылдам және экологиялық таза.</p>
+<button onclick="showInfo('Tesla Model S – электрлі көлік, 0-100 км/сағ 2 секундада.')">Ақпарат</button>
+</div>
+
+<div class="car">
+<img src="https://avatars.mds.yandex.net/get-autoru-vos/5219606/bfb8afe1073a7670346867d1290a2f92/1200x900">
+<h2>Audi A6</h2>
+<p>2023 жыл. Технологиялық тұрғыдан дамыған премиум седан.</p>
+<button onclick="showInfo('Audi A6 – ақылды көмекшілер мен жайлы интерьері бар.')">Ақпарат</button>
+</div>
+
+</div>
+</div>
+
+<div class="modal-bg" id="modal">
+<div class="modal">
+<p id="info"></p>
+<button onclick="closeInfo()">Жабу</button>
+</div>
+</div>
+
+<script>
+function showInfo(text) {
+  document.getElementById('info').innerText = text;
+  document.getElementById('modal').style.display = 'flex';
+}
+function closeInfo() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+</body>
+</html>
